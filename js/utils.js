@@ -1,20 +1,20 @@
 var forbbiden_words = [];
 
-function removeSpecialChars(text) {
+function removeAccentMarks(text) {
     
-    let removedSpecialChars = text.replaceAll("é", "e")
+    let removedAccentMarks = text.replaceAll("é", "e")
         .replaceAll("í", "i")
         .replaceAll("á", "a")
         .replaceAll("ó", "o")
         .replaceAll("ú", "u");
     
     
-    return [removedSpecialChars, removedSpecialChars !== text];
+    return [removedAccentMarks, removedAccentMarks !== text];
 }
 
 const replacedLetters = (text, encrypt) => {
     text = text.toLowerCase();
-    const [newText, textChanged] = removeSpecialChars(text);
+    const [newText, textChanged] = removeAccentMarks(text);
 
     if (textChanged) {
         document.getElementById("encrypt-text").value = newText;
