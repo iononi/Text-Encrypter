@@ -12,6 +12,17 @@ function removeAccentMarks(text) {
     return [removedAccentMarks, removedAccentMarks !== text];
 }
 
+function copyToClipboard() {
+    let text = document.getElementById("decrypt-text").value;
+
+    if (text !== "") {
+        navigator.clipboard.writeText(text);
+        alert("El texto se ha copiado al portapapeles!");
+    } else {
+        alert("No hay nada que copiar :(")
+    }
+}
+
 const replacedLetters = (text, encrypt) => {
     text = text.toLowerCase();
     const [newText, textChanged] = removeAccentMarks(text);
