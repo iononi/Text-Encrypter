@@ -1,7 +1,27 @@
 var forbbiden_words = [];
 
+function removeSpecialChars(text) {
+    
+    let removedSpecialChars = text.replaceAll("é", "e")
+        .replaceAll("í", "i")
+        .replaceAll("á", "a")
+        .replaceAll("ó", "o")
+        .replaceAll("ú", "u");
+    
+    
+    return [removedSpecialChars, removedSpecialChars !== text];
+}
+
 const replacedLetters = (text, encrypt) => {
     text = text.toLowerCase();
+    const [newText, textChanged] = removeSpecialChars(text);
+
+    if (textChanged) {
+        document.getElementById("encrypt-text").value = newText;
+        text = newText;
+    }
+
+
     let mod_text = "";
 
     if (encrypt) {
