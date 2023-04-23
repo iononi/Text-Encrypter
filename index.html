@@ -7,33 +7,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador de Textos</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css">
     <link rel="shortcut icon" href="assets/favicon/favicon.ico" type="image/x-icon">
 </head>
 
-<body>
-    <div>
-        <textarea name="encrypt-text" id="encrypt-text" cols="30" rows="10"
-            placeholder="Ingrese el texto aquí"></textarea>
+<body class="main-container">
+    <div class="main-container">
+        <div class="rec-1">
+            <button type="button" class="btn-cpy" onclick="copyToClipboard()">Copiar</button>
+            <textarea name="decrypt-text" id="decrypt-text" class="dec-text" readonly></textarea>
+        </div>
+        
+        <div class="logo">
+            <img src="assets/logo.png" alt="alura-logo">
+        </div>
 
-        <textarea name="decrypt-text" id="decrypt-text" cols="30" rows="10"
-            placeholder="Texto desencriptado" readonly></textarea>
+        <div class="frame-5">
+            <div id="msg" class="no-msg">Ningún mensaje fue encontrado</div>
+            <div id="text" class="text">Ingresa el texto que desees encriptar o desencriptar.</div>
+        </div>
 
-        <button name="encrypt" id="encrypt" onclick="encryptText()">
-            Encriptar
-        </button>
+        <div class="muneco">
+            <img id="muneco" src="assets/mu-eco.png" alt="muneco">
+        </div>
+        <div>
+            <textarea name="encrypt-text" id="encrypt-text" placeholder="Ingrese el texto aquí" class="enter-text enc-text main-container"></textarea>
+        </div>
 
-        <button name="decrypt" id="decrypt" onclick="decryptText()">
-            Desencriptar
-        </button>
+        <div class="frame-1">
+            <img src="assets/bi-exclamation-circle-fill.svg" alt="exclamation-mark">
+            <div>
+                <span class="warning">Solo letras minúsculas y sin acentos</span>
+            </div>
+        </div>
 
-        <button name="copy-text" id="copy-text" onclick="copyToClipboard()">
-            Copiar al portapapeles
-        </button>
+        <div class="frame-3">
+            <button type="button" class="enc-btn" onclick="encryptText()">Encriptar</button>
+            <button type="button" class="dec-btn" onclick="decryptText()">Desencriptar</button>
+        </div>
     </div>
 
-    <footer>&copy Eduardo Ruiz Rios</footer>
-
+    <!-- <footer>&copy Eduardo Ruiz Rios</footer> -->
     <script src="js/utils.js"></script>
 </body>
 
