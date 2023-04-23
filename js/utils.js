@@ -3,8 +3,12 @@ textField.addEventListener("keyup", () => {
     if (textField.value.trim() === "") {
         document.getElementById("decrypt-text").value = "";
         changeVisibility("visible");
+        copyButton.style.visibility = "hidden";
     }
 });
+
+const copyButton = document.getElementById("btn-cpy");
+copyButton.style.visibility = "hidden";
 
 function removeAccentMarks(text) {
     
@@ -72,6 +76,7 @@ function encryptText() {
     // change visibility of messages
     if (text !== "") {
         changeVisibility("hidden");
+        copyButton.style.visibility = "visible";       
     }
     document.getElementById("decrypt-text").value = replacedLetters(text, true);
 }
@@ -79,5 +84,6 @@ function encryptText() {
 function decryptText() {
     let text = document.getElementById("encrypt-text").value;
     changeVisibility("hidden");
+    copyButton.style.visibility = "visible";
     document.getElementById("decrypt-text").value = replacedLetters(text, false);
 }
