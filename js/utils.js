@@ -1,4 +1,10 @@
-var forbbiden_words = [];
+const textField = document.getElementById("encrypt-text");
+textField.addEventListener("keyup", () => {
+    if (textField.value.trim() === "") {
+        document.getElementById("decrypt-text").value = "";
+        changeVisibility("visible");
+    }
+});
 
 function removeAccentMarks(text) {
     
@@ -52,13 +58,26 @@ const replacedLetters = (text, encrypt) => {
     return mod_text;
 }
 
+function changeVisibility(status) {
+    const muneco = document.getElementById("muneco");
+    const msg = document.getElementById("msg");
+    const txt = document.getElementById("text");
+    muneco.style.visibility = status;
+    msg.style.visibility = status;
+    txt.style.visibility = status;
+}
 
 function encryptText() {
     let text = document.getElementById("encrypt-text").value;
+    // change visibility of messages
+    if (text !== "") {
+        changeVisibility("hidden");
+    }
     document.getElementById("decrypt-text").value = replacedLetters(text, true);
 }
 
 function decryptText() {
     let text = document.getElementById("encrypt-text").value;
+    changeVisibility("hidden");
     document.getElementById("decrypt-text").value = replacedLetters(text, false);
 }
