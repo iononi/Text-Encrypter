@@ -7,4 +7,4 @@ apply the knowledge acquired in Oracle ONE + Alura LATAM bootcamp.
     - [ ] Tablet
     - [ ] Phone
 - [ ] Publish web page into GitHub Pages
-- Create footer with personal data
+- [ ] Create footer with personal data
