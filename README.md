@@ -4,8 +4,8 @@ apply the knowledge acquired in Oracle ONE + Alura LATAM bootcamp.
 
 # To-Do
 - [ ] Responsive design
-    - [ X ] Desktop
+    - [ x ] Desktop
     - [ ] Tablet
     - [ ] Phone
-- [ X ] Publish web page into GitHub Pages
+- [ x ] Publish web page into GitHub Pages
 - [ ] Create footer with personal data
